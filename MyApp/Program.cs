@@ -3,6 +3,7 @@
 using Enttites;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace MyApp
 {
@@ -11,6 +12,28 @@ namespace MyApp
         static void Main(string[] args)
         {
 
+            ProductList p1 = new ProductList(1001, "P1", 100.1);
+            p1.Accessories.Add(new ProductList(1002, "P1A1", 100.2));
+            p1.Accessories.Add(new ProductList(1003, "P1A2", 100.3));
+
+            ProductList p2 = new ProductList(2001, "P2", 200.1);
+            p2.Accessories.Add(new ProductList(2002, "P2A1", 200.2));
+            p2.Accessories.Add(new ProductList(2003, "P2A2", 200.3));
+
+            IList<ProductList> products = new List<ProductList>();
+
+            products.Add(p1);
+            products.Add(p2);
+
+            string jsonString = JsonConvert.SerializeObject(products);
+            System.Console.WriteLine(jsonString);
+
+
+
+        }
+
+        private static void SerializeDeserializeJSON()
+        {
             Product product1 = new Product(101, "Red Apple", 1.99);
 
             //Serialize the product object to Json string
@@ -22,7 +45,6 @@ namespace MyApp
             Console.WriteLine($"The Product ID is {product2.Id}");
             Console.WriteLine($"The Product Name is {product2.Name}");
             Console.WriteLine($"The Product Price is {product2.Price}");
-
         }
     }
 
