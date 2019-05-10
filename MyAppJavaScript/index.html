@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        //Create model object
+        var product1 = {
+            id: 101,
+            name: "Red Apple",
+            price: 1.99
+        };
+
+        //Serialize JavaScript object to JSON string
+        var jsonString = JSON.stringify(product1);
+        document.write(jsonString);
+        document.write("<br/><br/>");
+
+        //Deserialize the JSON string back to product object
+        var str = '{"id":101,"name":"Red Apple","price":1.99}';
+        var product2 = JSON.parse(str);
+        document.write('Product ID is' + product2.id + '<br/>');
+        document.write('Product Name is ' + product2.name + '<br/>');
+        document.write('Product Price is ' + product2.price + '<br/>');
+       
+    </script>
+</head>
+
+<body>
+    <h1>
+        Welcome to HTML App
+    </h1>
+</body>
+
+</html>
