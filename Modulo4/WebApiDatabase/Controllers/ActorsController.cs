@@ -13,6 +13,14 @@ namespace WebApiDatabase.Controllers
             _dbContext = dbContext;
         }
 
+        // public ActorsController()
+        // {
+        //     string connectionString =
+        //    "server=localhost;port=3306;database=sakila;userid=root;pwd=joao000000;sslmode=none";
+
+        //     _dbContext = DataAccessDbContextFactory.Create(connectionString);
+        // }
+
         [HttpGet]
         public ActionResult Get()
         {
