@@ -9,7 +9,7 @@ namespace EFCoreWebAPI.Test
 {
     public class ActorsControllerEndToEndTest
     {
-        [Fact]
+        [Fact(Skip="Test Mock")]
         public async void GetActorByIdSmokeTest()
         {
             using (var httpClient = new HttpClient())
